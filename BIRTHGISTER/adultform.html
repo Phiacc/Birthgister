@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthgister</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="main-container">
+       
+       <nav>
+        <img src="./assets/logo (2).png" alt="" width="70px" height="50px">
+        <div class="hamburger" id="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+       </nav>
+    <ul class="menu" id="menu">
+        <li><a href="./index.html">
+          <img src="./assets/icons8-home-30 (1).png" alt="">  Home
+        </a></li>
+        <li><a href="./about.html">
+            <img src="./assets/icons8-team-24.png" alt=""> About
+        </a></li>
+        <li><a href="./apply.html">
+        <img src="./assets/icons8-signup-64.png" alt="" width="30px" height="20px"> Apply
+        </a></li>
+    </ul>
+    <img class="form-image" src="./assets/formimage.png" alt="">
+    <p class="secured" style="color: rgb(6, 138, 6); font-size: 13px;">Secured by <span style="color: rgb(6, 138, 6); font-weight: bold;">NIRRMC</span></p>
+   
+    <form action="" onsubmit="return validateForm()">
+        <h2> ADULT'S DETAILS</h2>
+        <input type="text" id="childName" class="input" name="childName" placeholder="Name of Child(Surname first)"><br><br>
+        <input type="text" id="childdob"  class="input" name="childob" placeholder="Date of Birth(Day/Month/Year)"><br><br>
+        <input type="number" id="childAge" name="childAge" placeholder="Age" min="18" max="200"><br><br>
+        <label>Gender:</label><input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label><input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><input type="radio" id="other" name="gender" value="other"><label for="other">Other</label><br><br>
+        <input type="text" id="placeofoccurance" class="input" name="placeofoccurance" placeholder="Place of Occurance"><br><br>
+        <input type="text" id="villageTown" class="input" name="villageTown" placeholder="Village/Town"><br><br>
+           
+        <h2>PARENT'S DETAILS</h2>
+        <input type="text" id="parent2Name" class="input" name="parent2Name" placeholder="Name of Any Parent"><br><br>
+        <input type="text" id="residence" class="input" name="residence" placeholder="Residence"><br><br>
+        <input type="number" id="Ageofanyparent" name="Ageofanyparent" placeholder="Current Age of Parent"><br><br>
+        <input type="text" id="nationality" name="nationality" placeholder="Nationality"><br><br>
+        <input type="text" id="stateOforigin" name="stateOforigin" placeholder="State Of Origin"><br><br>
+        <input type="text" id="Occupation" name="Occupation" placeholder="Occupation"><br><br>
+        <input type="number" id="contact" name="contact" placeholder="Phone Number"><br><br>
+        <input type="number" id="nationalID" name="nationalID" placeholder="National ID"><br><br>
+        
+<!-- submit button -->
+        <input type="submit" class="black-button Register-button" style="margin-left: 50px;" value="Submit">
+      </form>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
