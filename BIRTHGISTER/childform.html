@@ -31,51 +31,52 @@
     <img class="form-image" src="./assets/formimage.png" alt="">
     <p class="secured" style="color: rgb(6, 138, 6); font-size: 13px;">Secured by <span style="color: rgb(6, 138, 6); font-weight: bold;">NIRRMC</span></p>
    
-    <form action="" onsubmit="return validateForm()">
+    <form onsubmit="validateChildForm(event)">
         <h2>CHILD'S DETAILS</h2>
-        <input type="text" id="childName" class="input" name="childName" placeholder="Name of Child(Surname first)"><br><br>
-        <input type="text" id="childdob"  class="input" name="childob" placeholder="Date of Birth(Day/Month/Year)"><br><br>
-        <input type="number" id="childAge" name="childAge" placeholder="Age" min="1" max="18"><br><br>
-        <label>Gender:</label><input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label><input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><input type="radio" id="other" name="gender" value="other"><label for="other">Other</label><br><br>
-        <input type="text" id="placeofoccurance" class="input" name="placeofoccurance" placeholder="Place of Occurance"><br><br>
-        <input type="text" id="villageTown" class="input" name="villageTown" placeholder="Village/Town"><br><br>
+        <input type="text" id="name" class="input" name="childName" placeholder="Name of Child(Surname first)"><br><br>
+        <input type="text" id="dateofbirth"  class="input" name="childob" placeholder="Date of Birth(Day/Month/Year)"><br><br>
+        <input type="number" id="age" name="childAge" placeholder="Age" min="1" max="18"><br><br>
+        <label>Gender:</label><input type="radio" id="gender" name="gender" value="male"> <label for="gender">Male</label><input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><input type="radio" id="other" name="gender" value="other"><label for="other">Other</label><br><br>
+        <input type="text" id="place" class="input" name="placeofoccurance" placeholder="Place of Occurance"><br><br>
+        <input type="text" id="town" class="input" name="villageTown" placeholder="Village/Town"><br><br>
        
         <h2>MOTHER'S DETAILS</h2>
-        <input type="text" id="parent1Name" class="input" name="parent1Name" placeholder="Name in Full(Surname first)"><br><br>
-        <input type="text" id="residence" class="input" name="residence" placeholder="Residence"><br><br>
-        <input type="number" id="motherAge" name="motherAge" placeholder="Age at birth of child"><br><br>
-        <input type="text" id="maritialStatus" name="maritialStatus" placeholder="Maritial Status"><br><br>  
-        <input type="text" id="nationality" name="nationality" placeholder="Nationality"><br><br>
-        <input type="text" id="stateOforigin" name="stateOforigin" placeholder="State Of Origin"><br><br>
-        <input type="text" id="Occupation" name="Occupation" placeholder="Occupation"><br><br>
-        <input type="number" id="contact" name="contact" placeholder="Phone Number"><br><br>
-        <input type="number" id="nationalID" name="nationalID" placeholder="National ID"><br><br>
+        <input type="text" id="mothersName" class="input" name="parent1Name" placeholder="Name in Full(Surname first)"><br><br>
+        <input type="text" id="mothersResidence" class="input" name="residence" placeholder="Residence"><br><br>
+        <input type="number" id="mothersAgeAtBirth" name="motherAge" placeholder="Age at birth of child"><br><br>
+        <input type="text" id="mothersMaritalStatus" name="maritialStatus" placeholder="Maritial Status"><br><br>
+        <input type="text" id="mothersNationality" name="nationality" placeholder="Nationality"><br><br>
+        <input type="text" id="mothersStateOfOrigin" name="stateOforigin" placeholder="State Of Origin"><br><br>
+        <input type="text" id="mothersOccupation" name="Occupation" placeholder="Occupation"><br><br>
+        <input type="number" id="mothersPhoneNumber" name="contact" placeholder="Phone Number"><br><br>
+        <input type="number" id="mothersNationalID" name="nationalID" placeholder="National ID"><br><br>
         
         <h2>FATHER'S DETAILS</h2>
-        <input type="text" id="parent2Name" class="input" name="parent2Name" placeholder="Name in Full(Surname first)"><br><br>
-        <input type="text" id="residence" class="input" name="residence" placeholder="Residence"><br><br>
-        <input type="number" id="fatherAge" name="fatherAge" placeholder="Current Age"><br><br>
-        <input type="text" id="nationality" name="nationality" placeholder="Nationality"><br><br>
-        <input type="text" id="stateOforigin" name="stateOforigin" placeholder="State Of Origin"><br><br>
-        <input type="text" id="Occupation" name="Occupation" placeholder="Occupation"><br><br>
-        <input type="number" id="contact" name="contact" placeholder="Phone Number"><br><br>
-        <input type="number" id="nationalID" name="nationalID" placeholder="National ID"><br><br>
+        <input type="text" id="fathersName" class="input" name="parent2Name" placeholder="Name in Full(Surname first)"><br><br>
+        <input type="text" id="fathersResidence" class="input" name="residence" placeholder="Residence"><br><br>
+        <input type="number" id="fathersCurrentAge" name="fatherAge" placeholder="Current Age"><br><br>
+        <input type="text" id="fathersNationality" name="nationality" placeholder="Nationality"><br><br>
+        <input type="text" id="fathersStateOfOrigin" name="stateOforigin" placeholder="State Of Origin"><br><br>
+        <input type="text" id="fathersOccupation" name="Occupation" placeholder="Occupation"><br><br>
+        <input type="number" id="fathersPhoneNumber" name="contact" placeholder="Phone Number"><br><br>
+        <input type="number" id="fathersNationalID" name="nationalID" placeholder="National ID"><br><br>
         
         <h2>INFORMAT'S DETAILS</h2>
-        <input type="text" id="relation" class="input" name="relation" placeholder="Relationship to child"><br><br> 
-        <input type="text" id="informatName" class="input" name="informatName" placeholder="Name in Full(Surname first)"><br><br>
-        <input type="text" id="residence" class="input" name="residence" placeholder="Residence"><br><br>
-        <input type="number" id="contact" name="contact" placeholder="Phone Number"><br><br>
-        <input type="number" id="nationalID" name="nationalID" placeholder="National ID"><br><br>
+        <input type="text" id="informantRelationshipToChild" class="input" name="relation" placeholder="Relationship to child"><br><br>
+        <input type="text" id="informantName" class="input" name="informatName" placeholder="Name in Full(Surname first)"><br><br>
+        <input type="text" id="informantResidence" class="input" name="residence" placeholder="Residence"><br><br>
+        <input type="number" id="informantPhoneNumber" name="contact" placeholder="Phone Number"><br><br>
+        <input type="number" id="informantNationalID" name="nationalID" placeholder="National ID"><br><br>
 
         <div style="display: flex; width:130px; height: 150px; margin-left: 20px;">
-            <input style="width: 90px; margin: 60px 10px;" type="file" name="photo">
+            <input style="width: 90px; margin: 60px 10px;" type="file" id="photo" name="photo">
         </div>
 <!-- submit button -->
         <input type="submit" class="black-button Register-button" style="margin-left: 50px;" value="Submit">
       </form>
 
     </div>
-    <script src="script.js"></script>
+    <script src="child_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
