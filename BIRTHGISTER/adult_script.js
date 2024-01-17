@@ -63,66 +63,64 @@ function validateAdultForm(e) {
 async function submitAdultData(e) {
     e.preventDefault()
 
-    try {
-        const data = fields.map(fieldName => {
-            const fieldValue = document.getElementById(fieldName).value;
-            return { [fieldName]: fieldValue };
-        });
-        const file = document.getElementById('photo').files[0]
-        const photo = await fileAdultToBase64(file)
-
-        const combinedAdultData = Object.assign({ adult: true, photo: photo }, ...data);
-
-        // Display the combined data in the console (you can modify this part based on your needs)
-        console.log('Combined Data:', combinedAdultData);
-
-        // axios.post('https://birthgister.vercel.app/api/users', combinedData, {
-        //     headers: {
-        //         'Content-Type': 'application/json',
-        //         'Access-Control-Allow-Origin': '*',
-        //     }
-        // })
-        //     .then(function (response) {
-        //         console.log('Data submitted successfully:', response.data);
-        //         alert('Data submitted successfully!');
-        //     })
-        //     .catch(function (error) {
-        //         console.error('Error submitting data:', error);
-        //         alert('Error submitting data. Please try again.');
-        //     });
-
-        fetch('https://birthgister.vercel.app/api/users', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(combinedAdultData),
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
-            })
-            .then(async (data) => {
-                console.log('Data submitted successfully:', data);
-                alert('Data submitted successfully!');
-
-                const id = await data.data.id
-                console.log(`/certificate?id=${id}`)
-
-                if(await id) {
-                    window.location.href = `/certificate/?id=${id}`
-                }
-            })
-            .catch(error => {
-                console.error('Error submitting data:', error);
-                alert('Error submitting data. Please try again.');
-            });
-        
-    } catch (e) {
-        alert(e.message)
+    const file = document.getElementById('photo').files[0]
+    if(!file) {
+        return alert('upload photo')
     }
+    const photo = await fileAdultToBase64(file)
+
+    const loadingOverlay = document.getElementById('loadingOverlay');
+    loadingOverlay.style.display = 'flex';
+
+    const animation = setupAdultLoadingAnimation();
+
+    // Simulate API request delay
+    setTimeout(async () => {
+        try {
+            const data = fields.map(fieldName => {
+                const fieldValue = document.getElementById(fieldName).value;
+                return { [fieldName]: fieldValue };
+            });
+
+            const combinedData = Object.assign({ adult: true, photo: photo }, ...data);
+            console.log('Combined Data:', combinedData);
+
+            fetch('https://birthgister.vercel.app/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(combinedData),
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(async (data) => {
+                    console.log('Data submitted successfully:', data);
+                    const id = await data.data.id
+                    console.log(`/certificate?id=${id}`)
+
+                    if(await id) {
+                        window.location.href = `/certificate/?id=${id}`
+                    }
+                })
+                .catch(error => {
+                    console.error('Error submitting data:', error);
+                    alert('Error submitting data. Please try again.');
+                }).finally(() => {
+                loadingOverlay.style.display = 'none';
+                animation.destroy();
+            })
+
+        } catch(e) {
+            alert(e.message)
+            loadingOverlay.style.display = 'none';
+            animation.destroy();
+        }
+    }, 2000);
 }
 
 function fileAdultToBase64(file) {
@@ -147,5 +145,16 @@ function fileAdultToBase64(file) {
         };
 
         reader.readAsDataURL(file);
+    });
+}
+
+function setupAdultLoadingAnimation() {
+    const lottieContainer = document.getElementById('lottieContainer');
+    return bodymovin.loadAnimation({
+        container: lottieContainer,
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: 'loading.json',
     });
 }

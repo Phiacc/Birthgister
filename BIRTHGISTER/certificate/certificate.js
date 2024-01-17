@@ -34,7 +34,7 @@ fetch(`https://birthgister.vercel.app/api/users/${getCertId}`, {
         birthDay.value = formatDate(data.user.dateofbirth).inputFormattedDate.day
         birth_month_year.value = formatDate(data.user.dateofbirth).inputFormattedDate.month_year
         town.value = data.user.town
-        parentName.value = data.user.father.fathersName || data.user.mother.mothersName || data.user.parentName
+        parentName.value = data.user.father?.fathersName ?? data.user.mother?.mothersName ?? data.user.parent?.parentName
         place.value = data.user.place
         currentDay.value = formatDate(data.user.dateofbirth).todayFormattedDate.day
         current_month_year.value = formatDate(data.user.dateofbirth).todayFormattedDate.month_year

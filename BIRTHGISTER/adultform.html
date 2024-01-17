@@ -30,6 +30,11 @@
     </ul>
     <img class="form-image" src="./assets/formimage.png" alt="">
     <p class="secured" style="color: rgb(6, 138, 6); font-size: 13px;">Secured by <span style="color: rgb(6, 138, 6); font-weight: bold;">NIRRMC</span></p>
+
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="lottie-container" id="lottieContainer"></div>
+        <p>Sending data...</p>
+    </div>
    
     <form action="" onsubmit="validateAdultForm(event)">
         <h2> ADULT'S DETAILS</h2>
@@ -58,7 +63,8 @@
       </form>
 
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
     <script src="adult_script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!--    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
 </body>
 </html>
