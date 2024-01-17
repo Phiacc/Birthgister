@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthgister</title>
     <link rel="stylesheet" href="index.css">
+    <script defer src="certificate.js"></script>
 </head>
 <body>
     <div class="heading" style="display: flex; flex-direction: column; justify-content:center; align-items: center;">
@@ -28,13 +29,13 @@
         The certificate of Registration of Birth</h1>
        <div style="display: flex; flex-direction: column;">
         <p style="font-size: 20px; font-weight: bold; text-align: center;">
-            I,<input type="text" style="border: none; border-bottom:2px solid black; width: 400px;">
-            registrar of Birth at <input type="text" style="border: none; border-bottom:2px solid black; width: 400px;">
-            in Nigeria, do hereby certify that I have on this day, registered the birth of <input type="text" style="border: none; border-bottom:2px solid black; width: 400px;">. 
-            Born on the <input type="text" style="border: none; border-bottom:2px solid black; width: 50px;"> day of <input type="text" style="border: none; border-bottom:2px solid black; width: 100px;">
-            at <input type="text" style="border: none; border-bottom:2px solid black; width: 400px;">. <br>
-            The child of <input type="text" style="border: none; border-bottom:2px solid black; width: 400px;">, the place of birth <input type="text" style="border: none; border-bottom:2px solid black; width: 400px;">, witness my hands on this <input type="text" style="border: none; border-bottom:2px solid black; width: 50px;">
-            day of<input type="text" style="border: none; border-bottom:2px solid black; width: 100px;">.
+            I,<input type="text" id="registrarName" style="border: none; border-bottom:2px solid black; width: 400px;">
+            registrar of Birth at <input type="text" id="town_state" style="border: none; border-bottom:2px solid black; width: 400px;">
+            in Nigeria, do hereby certify that I have on this day, registered the birth of <input type="text" id="name" style="border: none; border-bottom:2px solid black; width: 400px;">.
+            Born on the <input type="text" id="birthDay" style="border: none; border-bottom:2px solid black; width: 50px;"> day of <input type="text" id="birth_month_year" style="border: none; border-bottom:2px solid black; width: 100px;">
+            at <input type="text" id="town" style="border: none; border-bottom:2px solid black; width: 400px;">. <br>
+            The child of <input type="text" id="parentName" style="border: none; border-bottom:2px solid black; width: 400px;">, the place of birth <input type="text" id="place" style="border: none; border-bottom:2px solid black; width: 400px;">, witness my hands on this <input type="text" id="currentDay" style="border: none; border-bottom:2px solid black; width: 50px;">
+            day of<input type="text" id="current_month_year" style="border: none; border-bottom:2px solid black; width: 100px;">.
 
             <br> <br>
             <br>

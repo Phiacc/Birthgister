@@ -31,33 +31,34 @@
     <img class="form-image" src="./assets/formimage.png" alt="">
     <p class="secured" style="color: rgb(6, 138, 6); font-size: 13px;">Secured by <span style="color: rgb(6, 138, 6); font-weight: bold;">NIRRMC</span></p>
    
-    <form action="" onsubmit="return validateForm()">
+    <form action="" onsubmit="validateAdultForm(event)">
         <h2> ADULT'S DETAILS</h2>
-        <input type="text" id="childName" class="input" name="childName" placeholder="Name of Child(Surname first)"><br><br>
-        <input type="text" id="childdob"  class="input" name="childob" placeholder="Date of Birth(Day/Month/Year)"><br><br>
-        <input type="number" id="childAge" name="childAge" placeholder="Age" min="18" max="200"><br><br>
-        <label>Gender:</label><input type="radio" id="male" name="gender" value="male"> <label for="male">Male</label><input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><input type="radio" id="other" name="gender" value="other"><label for="other">Other</label><br><br>
-        <input type="text" id="placeofoccurance" class="input" name="placeofoccurance" placeholder="Place of Occurance"><br><br>
-        <input type="text" id="villageTown" class="input" name="villageTown" placeholder="Village/Town"><br><br>
+        <input type="text" id="name" class="input" name="childName" placeholder="Name of Child(Surname first)"><br><br>
+        <input type="text" id="dateofbirth"  class="input" name="childob" placeholder="Date of Birth(Day/Month/Year)"><br><br>
+        <input type="number" id="age" name="childAge" placeholder="Age" min="18" max="200"><br><br>
+        <label>Gender:</label><input type="radio" id="gender" name="gender" value="male"> <label for="gender">Male</label><input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><input type="radio" id="other" name="gender" value="other"><label for="other">Other</label><br><br>
+        <input type="text" id="place" class="input" name="placeofoccurance" placeholder="Place of Occurance"><br><br>
+        <input type="text" id="town" class="input" name="villageTown" placeholder="Village/Town"><br><br>
            
         <h2>PARENT'S DETAILS</h2>
-        <input type="text" id="parent2Name" class="input" name="parent2Name" placeholder="Name of Any Parent"><br><br>
-        <input type="text" id="residence" class="input" name="residence" placeholder="Residence"><br><br>
-        <input type="number" id="Ageofanyparent" name="Ageofanyparent" placeholder="Current Age of Parent"><br><br>
-        <input type="text" id="nationality" name="nationality" placeholder="Nationality"><br><br>
-        <input type="text" id="stateOforigin" name="stateOforigin" placeholder="State Of Origin"><br><br>
-        <input type="text" id="Occupation" name="Occupation" placeholder="Occupation"><br><br>
-        <input type="number" id="contact" name="contact" placeholder="Phone Number"><br><br>
-        <input type="number" id="nationalID" name="nationalID" placeholder="National ID"><br><br>
+        <input type="text" id="parentName" class="input" name="parent2Name" placeholder="Name of Any Parent"><br><br>
+        <input type="text" id="parentResidence" class="input" name="residence" placeholder="Residence"><br><br>
+        <input type="number" id="parentCurrentAge" name="Ageofanyparent" placeholder="Current Age of Parent"><br><br>
+        <input type="text" id="parentNationality" name="nationality" placeholder="Nationality"><br><br>
+        <input type="text" id="parentStateOfOrigin" name="stateOforigin" placeholder="State Of Origin"><br><br>
+        <input type="text" id="parentOccupation" name="Occupation" placeholder="Occupation"><br><br>
+        <input type="number" id="parentPhoneNumber" name="contact" placeholder="Phone Number"><br><br>
+        <input type="number" id="parentNationalID" name="nationalID" placeholder="National ID"><br><br>
         
         <div style="display: flex; width:130px; height: 150px; margin-left: 20px;">
-            <input style="width: 90px; margin: 60px 10px;" type="file" name="photo">
+            <input style="width: 90px; margin: 60px 10px;" type="file" id="photo" name="photo">
         </div>
 <!-- submit button -->
         <input type="submit" class="black-button Register-button" style="margin-left: 50px;" value="Submit">
       </form>
 
     </div>
-    <script src="script.js"></script>
+    <script src="adult_script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </body>
 </html>
