@@ -75,15 +75,22 @@ async function submitChildData(e) {
   e.preventDefault();
 
   const file = document.getElementById("photo").files[0];
+  const submit_btn = document.getElementById("submit_btn")
+
   if (!file) {
     return alert("upload photo");
   }
-  const photo = await fileToBase64(file);
+
+  submit_btn.value = 'Loading'
+  submit_btn.disable()
+
 
   const loadingOverlay = document.getElementById("loadingOverlay");
   loadingOverlay.style.display = "flex";
 
   const animation = setupChildLoadingAnimation();
+
+  const photo = await fileToBase64(file);
 
   // Simulate API request delay
   setTimeout(async () => {
