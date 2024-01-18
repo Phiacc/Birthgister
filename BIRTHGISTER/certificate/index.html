@@ -8,43 +8,51 @@
     <script defer src="certificate.js"></script>
 </head>
 <body>
-    <div class="heading" style="display: flex; flex-direction: column; justify-content:center; align-items: center;">
-        <img src="../assets/kisspng-coat-of-arms-of-nigeria-drawing-p-m-news-coat-of-arms-of-somalia-5b1eaf9670b081.7717410015287376864616.jpg" 
-    alt="" width="80px" height="80px">
-    <div style="width: 350px; font-size: 12px; text-align: center; margin-top: -15px;">
-        <h1>THE NIGERIAN CERTIFICATE FOR RECOGNITION OF BIRTH</h1>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="lottie-container" id="lottieContainer"></div>
+        <p>Preparing Certificate...</p>
     </div>
-    <div style="display: flex; width: 350px; height: 200px; padding: 10px 20px; margin-top: -20px; justify-content: center; align-items: center;">     
-        <div style="display: flex; width: 200px; 
-        height: 150px; margin-top: 20px;">
-            <div style="display: flex; flex-direction: column;">
-                <h1 style="font-size: 20px; text-align: center; margin-bottom: 0;">REGISTRATION OF BIRTH</h1>
-                <p style="margin-top: 5px; font-weight: bold; font-size: 12px;">PURSUANT TO SECTION 7(5),ITEM 1(i) OF THE FOURTH SCHEDULE TO THE CONSTITUTION OF THE FEDERAL REPUBLIC OF NIGERIA 1999(AS AMENDED)</p>
+
+    <div style="background-image: url(../assets/cert_background.jpeg);" id="certificate">
+        <div class="heading" style="display: flex; flex-direction: column; justify-content:center; align-items: center;">
+            <img src="../assets/kisspng-coat-of-arms-of-nigeria-drawing-p-m-news-coat-of-arms-of-somalia-5b1eaf9670b081.7717410015287376864616.jpg"
+        alt="" width="80px" height="80px">
+            <div style="width: 350px; font-size: 12px; text-align: center; margin-top: -15px;">
+                <h2>THE NIGERIAN CERTIFICATE FOR RECOGNITION OF BIRTH</h2>
+            </div>
+            <div style="display: flex; width: 350px; height: 200px; padding: 10px 20px; margin-top: -20px; justify-content: center; align-items: center;">
+                <div style="display: flex; width: 200px;
+                height: 150px; margin-top: 20px;">
+                    <div style="display: flex; flex-direction: column;">
+                        <h1 style="font-size: 18px; text-align: center; margin-bottom: 0;">REGISTRATION OF BIRTH</h1>
+                        <p style="margin-top: 5px; font-weight: bold; font-size: 12px;">PURSUANT TO SECTION 7(5),ITEM 1(i) OF THE FOURTH SCHEDULE TO THE CONSTITUTION OF THE FEDERAL REPUBLIC OF NIGERIA 1999(AS AMENDED)</p>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <h1 style="text-decoration: underline; font-style: italic; text-align: center; margin-top: 0; font-size: 24px;">The certificate of Registration of Birth</h1>
+        <div style="display: flex; flex-direction: column;">
+            <p style="font-size: 16px; font-weight: bold; text-align: center;">
+                I,<input type="text" id="registrarName" style="border: none; border-bottom:2px solid black; width: 400px;">
+                registrar of Birth at <input type="text" id="town_state" style="border: none; border-bottom:2px solid black; width: 400px;">
+                in Nigeria, do hereby certify that I have on this day, registered the birth of <input type="text" id="name" style="border: none; border-bottom:2px solid black; width: 400px;">.
+                Born on the <input type="text" id="birthDay" style="border: none; border-bottom:2px solid black; width: 50px;"> day of <input type="text" id="birth_month_year" style="border: none; border-bottom:2px solid black; width: 100px;">
+                at <input type="text" id="town" style="border: none; border-bottom:2px solid black; width: 400px;">. <br>
+                The child of <input type="text" id="parentName" style="border: none; border-bottom:2px solid black; width: 400px;">, the place of birth <input type="text" id="place" style="border: none; border-bottom:2px solid black; width: 400px;">, witness my hands on this <input type="text" id="currentDay" style="border: none; border-bottom:2px solid black; width: 50px;">
+                day of<input type="text" id="current_month_year" style="border: none; border-bottom:2px solid black; width: 100px;">.
+                <br>
+                <br>
+                <br>
+                <input type="text" style="border: none; border-bottom:2px solid black; width: 100px; text-align: right;"><br>
+                Sign
+
+            </p>
+        </div>
     </div>
-    </div>
 
-    <h1 style="text-decoration: underline; font-style: italic; text-align: center; margin-top: 0; font-size: 28px;">
-        The certificate of Registration of Birth</h1>
-       <div style="display: flex; flex-direction: column;">
-        <p style="font-size: 20px; font-weight: bold; text-align: center;">
-            I,<input type="text" id="registrarName" style="border: none; border-bottom:2px solid black; width: 400px;">
-            registrar of Birth at <input type="text" id="town_state" style="border: none; border-bottom:2px solid black; width: 400px;">
-            in Nigeria, do hereby certify that I have on this day, registered the birth of <input type="text" id="name" style="border: none; border-bottom:2px solid black; width: 400px;">.
-            Born on the <input type="text" id="birthDay" style="border: none; border-bottom:2px solid black; width: 50px;"> day of <input type="text" id="birth_month_year" style="border: none; border-bottom:2px solid black; width: 100px;">
-            at <input type="text" id="town" style="border: none; border-bottom:2px solid black; width: 400px;">. <br>
-            The child of <input type="text" id="parentName" style="border: none; border-bottom:2px solid black; width: 400px;">, the place of birth <input type="text" id="place" style="border: none; border-bottom:2px solid black; width: 400px;">, witness my hands on this <input type="text" id="currentDay" style="border: none; border-bottom:2px solid black; width: 50px;">
-            day of<input type="text" id="current_month_year" style="border: none; border-bottom:2px solid black; width: 100px;">.
-
-            <br> <br>
-            <br>
-            <input type="text" style="border: none; border-bottom:2px solid black; width: 100px; text-align: right;"><br>
-            Sign
-        
-        </p>
-       </div>
-
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.9/lottie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.js"></script>
 </body>
 </html>
