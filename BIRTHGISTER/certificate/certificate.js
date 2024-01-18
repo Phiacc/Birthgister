@@ -49,7 +49,9 @@ function generateCertificate () {
                     currentDay.value = formatDate(data.user.dateofbirth).todayFormattedDate.day
                     current_month_year.value = formatDate(data.user.dateofbirth).todayFormattedDate.month_year
 
-                    downloadCertificate()
+                    if (window.confirm("Do you want to download the certificate?")) {
+                        downloadCertificate();
+                    }
                 })
                 .catch(error => {
                     console.error('Error retrieving data:', error);
