@@ -50,10 +50,12 @@ function generateCertificate () {
                     current_month_year.value = formatDate(data.user.dateofbirth).todayFormattedDate.month_year
 
                     loadingOverlay.style.display = 'none';
-                    animation.destroy();
+                    await animation.destroy();
 
                     if (window.confirm("Do you want to download the certificate?")) {
-                        downloadCertificate();
+                        await downloadCertificate();
+                        await alert('downloaded successfully!')
+                        window.location.href = '../endingpage.html'
                     }
                 })
                 .catch(error => {
