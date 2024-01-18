@@ -82,7 +82,8 @@ async function submitChildData(e) {
   }
 
   submit_btn.value = 'Loading'
-  submit_btn.disable()
+  submit_btn.disabled = true;
+  submit_btn.style.backgroundColor = '#e7e7e7'
 
 
   const loadingOverlay = document.getElementById("loadingOverlay");
