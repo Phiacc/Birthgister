@@ -126,8 +126,12 @@ async function submitChildData(e) {
           console.log(`/certificate?id=${id}`);
 
           if (await id) {
-            window.location.href = `/certificate/?id=${id}`;
+            window.location.href = `/endingpage/?id=${id}`;
           }
+
+          // if (await id) {
+          //   window.location.href = `/certificate/?id=${id}`;
+          // }
         })
         .catch((error) => {
           console.error("Error submitting data:", error);

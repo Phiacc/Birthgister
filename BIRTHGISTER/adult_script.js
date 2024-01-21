@@ -110,9 +110,13 @@ async function submitAdultData(e) {
                     const id = await data.data.id
                     console.log(`/certificate?id=${id}`)
 
-                    if(await id) {
-                        window.location.href = `/certificate/?id=${id}`
+                    if (await id) {
+                        window.location.href = `/endingpage/?id=${id}`;
                     }
+
+                    // if(await id) {
+                    //     window.location.href = `/certificate/?id=${id}`
+                    // }
                 })
                 .catch(error => {
                     console.error('Error submitting data:', error);

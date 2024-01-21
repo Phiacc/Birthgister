@@ -55,7 +55,7 @@ function generateCertificate () {
                     if (window.confirm("Do you want to download the certificate?")) {
                         await downloadCertificate();
                         await alert('downloaded successfully!')
-                        window.location.href = '../endingpage.html'
+                        window.location.href = '../endingpage/index.html'
                     }
                 })
                 .catch(error => {
